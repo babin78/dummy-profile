@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio | Chandni Chauhan</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!--
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#home" class="logo" aria-label="Chandni's Portfolio - Home"
+        >Port<span>folio</span></a
+      >
+
+      <button
+        id="menu-icon"
+        aria-label="Toggle navigation menu"
+        class="menu-button"
+      >
+        <i class="bx bx-menu"></i>
+      </button>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <!---
+      <div class="header-right">
+        <span class="lang-text">en $</span>
+        <a href="#" class="btn-cv">Download CV</a>
+      </div>
+   -->
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-img">
+        <picture class="img-box skeleton">
+          <img src="./profile.JPG" alt="Profile" />
+        </picture>
+      </div>
+
+      <div class="home-content">
+        <h2>Hello, I'm</h2>
+        <h1>Chandni Chauhan</h1>
+        <h3>And I'm a <span class="typing-text"></span></h3>
+        <p>
+          I am a passionate web developer focused on creating clean, responsive,
+          and user-friendly digital experiences.
+        </p>
+        <!--
+        <div class="social-media">
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+          <a href="#"><i class="bx bxl-linkedin"></i></a>
+        </div>
+        -->
+        <div class="btn-group">
+          <a href="#" class="btn primary">Hire Me</a>
+          <a href="#" class="btn secondary">Contact Me</a>
+        </div>
+      </div>
+    </section>
+    <!--
+    <div class="stats-bar">
+      <div class="stat-item">
+        <h2>10+</h2>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat-item">
+        <h2>30+</h2>
+        <p>Projects Done</p>
+      </div>
+      <div class="stat-item">
+        <h2>5+</h2>
+        <p>Tech Mastered</p>
+      </div>
+      <div class="stat-item">
+        <h2>100+</h2>
+        <p>Clients</p>
+      </div>
+    </div>
+    -->
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+          I'm a passionate web developer with over 10 years of experience in
+          creating beautiful, functional, and user-centric digital experiences.
+          I specialize in modern web technologies and love turning ideas into
+          reality.
+        </p>
+        <p>
+          When I'm not coding, you can find me exploring new design trends,
+          contributing to open-source projects, or mentoring aspiring
+          developers. I believe in continuous learning and innovation.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <h3>10+</h3>
+          <p>Years in Web Dev</p>
+        </div>
+        <div class="stat">
+          <h3>50+</h3>
+          <p>Happy Clients</p>
+        </div>
+        <div class="stat">
+          <h3>100+</h3>
+          <p>Projects Completed</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills" id="skills">
+      <h2>My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="bx bxl-html5"></i>
+          <h3>HTML5</h3>
+          <p>Semantic markup & accessibility</p>
+        </div>
+        <div class="skill-card">
+          <i class="bx bxl-css3"></i>
+          <h3>CSS3</h3>
+          <p>Responsive design & animations</p>
+        </div>
+        <div class="skill-card">
+          <i class="bx bxl-javascript"></i>
+          <h3>JavaScript</h3>
+          <p>Interactive & dynamic experiences</p>
+        </div>
+        <div class="skill-card">
+          <i class="bx bxl-react"></i>
+          <h3>React</h3>
+          <p>Component-based development</p>
+        </div>
+        <div class="skill-card">
+          <i class="bx bxl-nodejs"></i>
+          <h3>Node.js</h3>
+          <p>Backend & API development</p>
+        </div>
+        <div class="skill-card">
+          <i class="bx bxs-database"></i>
+          <h3>Databases</h3>
+          <p>MongoDB & SQL expertise</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+      <h2>Services I Offer</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="bx bxs-pen"></i>
+          <h3>Web Design</h3>
+          <p>
+            Creating beautiful and intuitive user interfaces that engage and
+            convert.
+          </p>
+        </div>
+        <div class="service-card">
+          <i class="bx bx-code-alt"></i>
+          <h3>Web Development</h3>
+          <p>
+            Building responsive, fast, and scalable web applications from
+            scratch.
+          </p>
+        </div>
+        <div class="service-card">
+          <i class="bx bx-mobile"></i>
+          <h3>Mobile Responsive</h3>
+          <p>
+            Ensuring your website looks perfect on all devices and screen sizes.
+          </p>
+        </div>
+        <div class="service-card">
+          <i class="bx bx-cog"></i>
+          <h3>Backend Development</h3>
+          <p>
+            Robust server-side solutions for your web applications and APIs.
+          </p>
+        </div>
+        <div class="service-card">
+          <i class="bx bx-bar-chart"></i>
+          <h3>SEO Optimization</h3>
+          <p>
+            Improving visibility and driving organic traffic to your website.
+          </p>
+        </div>
+        <div class="service-card">
+          <i class="bx bx-support"></i>
+          <h3>Support & Maintenance</h3>
+          <p>
+            Ongoing support and updates to keep your website running smoothly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio" id="portfolio">
+      <h2>My Work</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="portfolio-img">
+            <img
+              src="https://via.placeholder.com/300x200?text=Project+1"
+              alt="E-Commerce Platform project"
+            />
+          </div>
+          <h3>E-Commerce Platform</h3>
+          <p>
+            A full-stack e-commerce solution with payment integration and admin
+            dashboard.
+          </p>
+          <a href="#" aria-label="View E-Commerce Platform project details"
+            >View Project →</a
+          >
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-img">
+            <img
+              src="https://via.placeholder.com/300x200?text=Project+2"
+              alt="Task Management App project"
+            />
+          </div>
+          <h3>Task Management App</h3>
+          <p>React-based task manager with real-time collaboration features.</p>
+          <a href="#" aria-label="View Task Management App project details"
+            >View Project →</a
+          >
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-img">
+            <img
+              src="https://via.placeholder.com/300x200?text=Project+3"
+              alt="Social Media Dashboard project"
+            />
+          </div>
+          <h3>Social Media Dashboard</h3>
+          <p>
+            Analytics dashboard for tracking social media metrics and
+            performance.
+          </p>
+          <a href="#" aria-label="View Social Media Dashboard project details"
+            >View Project →</a
+          >
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-img">
+            <img
+              src="https://via.placeholder.com/300x200?text=Project+4"
+              alt="Weather App project"
+            />
+          </div>
+          <h3>Weather App</h3>
+          <p>Real-time weather application with location-based forecasts.</p>
+          <a href="#" aria-label="View Weather App project details"
+            >View Project →</a
+          >
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-img">
+            <img
+              src="https://via.placeholder.com/300x200?text=Project+5"
+              alt="Blog Platform project"
+            />
+          </div>
+          <h3>Blog Platform</h3>
+          <p>Content management system with advanced publishing features.</p>
+          <a href="#" aria-label="View Blog Platform project details"
+            >View Project →</a
+          >
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-img">
+            <img
+              src="https://via.placeholder.com/300x200?text=Project+6"
+              alt="Video Streaming Service project"
+            />
+          </div>
+          <h3>Video Streaming Service</h3>
+          <p>
+            Scalable streaming platform with user authentication and
+            recommendations.
+          </p>
+          <a href="#" aria-label="View Video Streaming Service project details"
+            >View Project →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+      <h2>Get In Touch</h2>
+      <p class="contact-subtitle">Have a project in mind? Let's talk!</p>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="bx bx-envelope" aria-label="Email icon"></i>
+            <div>
+              <h3>Email</h3>
+              <p>chandni@example.com</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="bx bx-phone" aria-label="Phone icon"></i>
+            <div>
+              <h3>Phone</h3>
+              <p>+1 (555) 123-4567</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="bx bx-location-plus" aria-label="Location icon"></i>
+            <div>
+              <h3>Location</h3>
+              <p>San Francisco, CA</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              placeholder="Your Message"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2026 Chandni Chauhan. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Visit our Facebook page"
+          ><i class="bx bxl-facebook"></i
+        ></a>
+        <a href="#" aria-label="Visit our Twitter page"
+          ><i class="bx bxl-twitter"></i
+        ></a>
+        <a href="#" aria-label="Visit our Instagram page"
+          ><i class="bx bxl-instagram"></i
+        ></a>
+        <a href="#" aria-label="Visit our LinkedIn page"
+          ><i class="bx bxl-linkedin"></i
+        ></a>
+      </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button id="goToTop" class="go-to-top" aria-label="Go to top">
+      <i class="bx bx-chevron-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
