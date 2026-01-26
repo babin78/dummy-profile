@@ -3,16 +3,10 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box; /* Ensures padding/borders don't affect width */
-  /* font-family:
-    "Helvetica Now", "Helvetica Neue", Helvetica, "Poppins", sans-serif; */
   text-decoration: none;
   transition: 0.3s ease;
 
   font-family: "Noto Sans", sans-serif;
-  /* font-optical-sizing: auto; */
-  /* font-weight: <weight>; */
-  /* font-style: thin; */
-  /* font-variation-settings: "wdth" 100; */
   font-weight: 100;
 }
 
@@ -30,6 +24,23 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   overflow-x: hidden;
+}
+
+/* ACCESSIBILITY: Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--main-color);
+  color: var(--bg-color);
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 101;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* HEADER & NAVBAR */
@@ -927,6 +938,49 @@ body {
   color: #fff;
   font-family: inherit;
   transition: border-color 0.3s ease;
+}
+
+/* Form validation and feedback messages */
+.error-message {
+  animation: slideInDown 0.3s ease-out;
+}
+
+.success-message {
+  animation: slideInDown 0.3s ease-out;
+}
+
+/* Keyboard focus visible for accessibility */
+.form-group input:focus-visible,
+.form-group textarea:focus-visible,
+.btn:focus-visible,
+.navbar a:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+}
+
+/* Enhanced hover and focus states */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--main-color);
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+/* Menu button accessibility */
+.menu-button:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .form-group input:focus,
