@@ -158,11 +158,28 @@ body {
   align-items: center;
   padding: 0px 10%;
   gap: 4rem;
+  flex-direction: row; /* Ensure it is explicitly row for desktop */
+  /* justify-content: space-between; Change gap to justify-content */
 }
 
+.home .home-content {
+  flex: 1; /* Takes up available space */
+  max-width: 50%;
+}
+
+.home .home-img {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centers the image box within its half */
+}
+
+.home-content h2 {
+  animation: homeContentAnim 1s ease-out 0.5s backwards;
+}
 .home-content h1 {
   font-size: 3.5em;
   line-height: 1.2;
+  text-align: left;
   animation: homeContentAnim 1s ease-out 1s backwards;
 }
 .home-content h3 {
@@ -170,6 +187,7 @@ body {
 }
 .home-content p {
   margin-top: 10px;
+  text-align: left;
   animation:
     homeContentAnim 1s ease-out 3s backwards,
     textRipple 4s ease-in-out 4s infinite;
@@ -198,10 +216,6 @@ body {
   text-align: left;
   white-space: nowrap;
   animation: homeContentAnim 1s ease-out 2s backwards;
-}
-
-.home-content p {
-  text-align: left;
 }
 
 .typing-text {
@@ -441,13 +455,16 @@ body {
   }
 
   .home {
-    flex-direction: column;
+    /* flex-direction: column; */
     text-align: center;
-    padding-top: 8rem;
+    /* padding-top: 8rem; */
+    justify-content: center;
+    align-items: center;
   }
 
   .btn-group {
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .home-content h1 {
@@ -560,7 +577,15 @@ body {
     justify-content: left;
   }
 
-  .home-content h1 {
+  .home {
+    flex-direction: column;
+    width: 100%;
+    /* text-align: center; */
+  }
+  .home .home-content {
+    max-width: 100%;
+  }
+  .home .home-content h1 {
     font-size: 2.2em;
     text-align: center;
   }

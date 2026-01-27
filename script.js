@@ -57,7 +57,10 @@ if (navLinks.length > 0) {
         link.classList.add("active");
 
         // Close mobile menu if it's open
-        if (menuIcon) menuIcon.classList.remove("bx-x");
+        if (menuIcon) {
+          menuIcon.classList.remove("bx-x");
+          menuIcon.classList.add("bx-menu");
+        }
         if (navbar) navbar.classList.remove("active");
       }
     });
