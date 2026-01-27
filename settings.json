@@ -1,0 +1,6 @@
+{
+  "minify.minifyOnSave": true,
+  "minify.js.mangle": true,
+  "minify.css.configFile": "",
+  "minify.js.outputFileName": "$(name).min.$(ext)"
+}

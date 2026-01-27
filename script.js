@@ -32,7 +32,7 @@ if (typingElement) {
   console.warn("Typing element (.typing-text) not found in DOM");
 }
 
-// 3. Smooth Scrolling & Active Link Detection
+//  3. Smooth Scrolling & Active Link Detection +++
 const navLinks = document.querySelectorAll(".navbar a");
 
 if (navLinks.length > 0) {
@@ -123,7 +123,7 @@ if (header && goToTopBtn) {
         // Hide button at top
         goToTopBtn.classList.remove("show");
       }
-    }, 100),
+    }, 200),
   );
 
   // GO TO TOP BUTTON CLICK HANDLER

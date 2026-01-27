@@ -99,9 +99,9 @@ body {
   color: var(--main-color);
 }
 
-.navbar {
+/* .navbar {
   animation: navbaranim 0.5s ease-out 0.5s backwards;
-}
+} */
 
 @keyframes navbaranim {
   0% {
@@ -173,14 +173,14 @@ body {
   justify-content: center; /* Centers the image box within its half */
 }
 
-.home-content h2 {
+/* .home-content h2 {
   animation: homeContentAnim 1s ease-out 0.5s backwards;
-}
+} */
 .home-content h1 {
   font-size: 3.5em;
   line-height: 1.2;
   text-align: left;
-  animation: homeContentAnim 1s ease-out 1s backwards;
+  /* animation: homeContentAnim 1s ease-out 1s backwards; */
 }
 .home-content h3 {
   font-size: 1.5em;
@@ -189,8 +189,8 @@ body {
   margin-top: 10px;
   text-align: left;
   animation:
-    homeContentAnim 1s ease-out 3s backwards,
-    textRipple 4s ease-in-out 4s infinite;
+    /* homeContentAnim 1s ease-out 3s backwards, */ textRipple 4s
+    ease-in-out 0.5s infinite;
   background: linear-gradient(
     90deg,
     var(--secondary-text-color) 0%,
@@ -207,15 +207,15 @@ body {
   font-size: medium;
 }
 
-.home-content h3:first-of-type {
+/* .home-content h3:first-of-type {
   animation: homeContentAnim 1s ease-out 0s backwards;
-}
+} */
 
 .home-content h3:last-of-type {
   display: block;
   text-align: left;
   white-space: nowrap;
-  animation: homeContentAnim 1s ease-out 2s backwards;
+  /* animation: homeContentAnim 1s ease-out 2s backwards; */
 }
 
 .typing-text {
@@ -227,7 +227,7 @@ body {
 
 @keyframes homeContentAnim {
   0% {
-    transform: translateY(50px); /* Start 50px below */
+    /* transform: translateY(50px); /* Start 50px below */
     filter: blur(20px);
     opacity: 0; /* Optional: start invisible for a smoother fade-in */
   }
@@ -272,7 +272,7 @@ body {
   opacity: 0;
   animation:
     rotate 4s linear infinite,
-    fadeIn 0.5s linear 4s forwards;
+    fadeIn 0.5s linear 0.5s forwards;
 }
 
 .img-box img {
@@ -331,7 +331,7 @@ body {
   cursor: pointer;
   border: 2px solid transparent; /* Added to prevent jumping when border appears */
   transition: 0.4s ease; /* Smooth transition for the glow and colors */
-  animation: homeContentAnim 1s ease-out 5s backwards;
+  /* animation: homeContentAnim 1s ease-out 5s backwards; */
 }
 .btn.primary {
   background: var(--main-color);
@@ -373,7 +373,7 @@ body {
 }
 .social-media {
   margin-top: 10px;
-  animation: homeContentAnim 1s ease-out 4s backwards;
+  /* animation: homeContentAnim 1s ease-out 4s backwards; */
 }
 .social-media a {
   font-size: 1.8rem;
@@ -486,7 +486,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    animation: homeContentAnim 1s ease-out 2s backwards;
+    /* animation: homeContentAnim 1s ease-out 2s backwards; */
   }
 
   .home-content p {
@@ -1006,12 +1006,6 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--main-color);
 }
 
 .contact-form .btn {
