@@ -72,6 +72,7 @@
         top: 0;
         left: 0;
         width: 100%;
+        height: 90%;
         padding: 20px 10%;
         display: flex;
         justify-content: space-between;
@@ -183,6 +184,7 @@
         gap: 4rem;
         flex-direction: row; /* Ensure it is explicitly row for desktop */
         /* justify-content: space-between; Change gap to justify-content */
+        animation: homeContentAnim 1s forwards;
       }
 
       .home .home-content {
@@ -250,7 +252,8 @@
 
       @keyframes homeContentAnim {
         0% {
-          /* transform: translateY(50px); /* Start 50px below */
+          transform: translateY(50px);
+
           filter: blur(20px);
           opacity: 0; /* Optional: start invisible for a smoother fade-in */
         }
@@ -270,47 +273,47 @@
         }
       }
 
+      /* Updated Wrapper Logic */
       .home-img .img-box {
         position: relative;
         width: 32vw;
         height: 32vw;
         border-radius: 50%;
+        background: var(--second-bg-color);
+        /* The border is now handled by the pseudo-element below */
         display: flex;
         justify-content: center;
         align-items: center;
-      }
 
-      /* The glowing animated borders */
-      .img-box::before {
-        content: "";
-        position: absolute;
-        width: 102%;
-        height: 102%;
-        border-radius: 50%;
-        border: 2px solid var(--main-color);
-        border-top: 1px solid transparent;
-        border-bottom: 1px solid transparent;
-
-        /* We also hide the border initially so it appears with the image */
+        /* Entrance Zoom for the whole unit */
         opacity: 0;
-        animation:
-          rotate 4s linear infinite,
-          fadeIn 0.5s linear 0.5s forwards;
+        transform: scale(0);
+        animation: zoomInEntrance 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+          0.5s forwards;
+      }
+      /* The Revolving Border */
+      .home-img .img-box::before {
+        content: ""; /* Fixed: Removed "xxxxxxxx" */
+        position: absolute;
+        /* Inset creates the 'margin' effect around the image */
+        inset: -8px;
+        border-radius: 50%;
+        border: 3px solid var(--main-color);
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+
+        /* Continuous Rotation */
+        animation: rotate 4s linear infinite;
+        z-index: -1;
       }
 
+      /* The Image itself inside the box */
       .img-box img {
-        width: 90%;
-        height: 90%;
+        width: 95%;
+        height: 95%;
         object-fit: cover;
         border-radius: 50%;
-        background: var(--second-bg-color);
-        border: 1px solid var(--main-color);
-
-        /* NEW ANIMATION PROPERTIES */
-        opacity: 0; /* Start hidden */
-        transform: scale(0); /* Start zoomed out at 0 */
-        animation: zoomInEntrance 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
-          4s forwards;
+        border: 2px solid var(--bg-color); /* Small gap between image and spinner */
       }
 
       /* Entrance Zoom Animation */
@@ -340,10 +343,10 @@
       /* BUTTONS & SOCIALS */
       .btn-group {
         display: flex;
-
-        gap: 1rem;
-
+        flex-direction: row; /* Force horizontal layout */
+        gap: 1.5rem; /* Consistent spacing between buttons */
         margin-top: 2rem;
+        justify-content: flex-start; /* Align to the left */
       }
 
       /* Base Button Styling */
@@ -408,6 +411,12 @@
         opacity: 1;
         color: var(--main-color);
       }
+
+      @media (max-width: 768px) {
+        .home-content {
+          margin-top: -160px;
+        }
+      }
     </style>
 
     <link
@@ -456,12 +465,14 @@
     <main id="main-content">
       <section class="home" id="home">
         <div class="home-img">
-          <img
-            class="img-box skeleton"
-            src="./profile.JPG"
-            alt="Profile of Chandni Chauhan"
-            fetchpriority="high"
-          />
+          <div class="img-box">
+            <img
+              class="skeleton"
+              src="./profile.JPG"
+              alt="Profile of Chandni Chauhan"
+              fetchpriority="high"
+            />
+          </div>
         </div>
 
         <div class="home-content">

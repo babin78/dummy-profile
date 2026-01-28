@@ -74,11 +74,8 @@
     /* padding-top: 8rem; */
     justify-content: center;
     align-items: center;
-  }
-
-  .btn-group {
-    flex-direction: column;
-    align-items: center;
+    margin-top: 10%;
+    max-height: 90%;
   }
 
   .home-content h1 {
@@ -144,6 +141,10 @@
     font-size: 1.2em;
   }
 
+  /* .home {
+    max-height: 80vh;
+  } */
+
   #menu-icon {
     display: block;
   }
@@ -152,6 +153,9 @@
     display: flex;
   }
 
+  .btn-group {
+    flex-direction: column;
+  }
   .navbar {
     position: absolute;
     top: 100%;
