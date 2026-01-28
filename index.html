@@ -19,7 +19,407 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.min.css" />
+    <!--<link rel="stylesheet" href="/styles.min.css" />-->
+    <style>
+      /* Critical CSS: Minimal styles for the first view */
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box; /* Ensures padding/borders don't affect width */
+        text-decoration: none;
+        transition: 0.3s ease;
+
+        font-family: "Noto Sans", sans-serif;
+        font-weight: 100;
+      }
+
+      :root {
+        --bg-color: #020d18;
+        --second-bg-color: #05162a;
+        --text-color: rgba(255, 255, 255, 0.712);
+        --secondary-text-color: #ffffff;
+        --main-color: #00d2ff;
+        --accent-color: #9d50bb;
+        --typing-color: yellow;
+      }
+
+      body {
+        background: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+      }
+
+      /* ACCESSIBILITY: Skip to main content link */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--main-color);
+        color: var(--bg-color);
+        padding: 8px 16px;
+        text-decoration: none;
+        font-weight: 600;
+        z-index: 101;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* HEADER & NAVBAR */
+      .header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        background: rgba(2, 13, 24, 0.95);
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .header.hide {
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+      }
+      .logo {
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #fff;
+        /* animation: slideIn 0.5s ease-out forwards; */
+        transition: 1s ease !important;
+      }
+
+      .header.show {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .logo:hover {
+        transform: scale(1.3);
+      }
+
+      @keyframes slideIn {
+        0% {
+          transform: translateX(-100px); /* Start 100px to the left */
+          opacity: 0; /* Optional: start invisible for a smoother fade-in */
+        }
+        100% {
+          transform: translateX(0); /* End at the original position */
+          opacity: 1; /* Fully visible */
+        }
+      }
+
+      .logo span {
+        color: var(--main-color);
+      }
+
+      /* .navbar {
+  animation: navbaranim 0.5s ease-out 0.5s backwards;
+} */
+
+      @keyframes navbaranim {
+        0% {
+          transform: translateX(100px); /* Start 100px to the right */
+          opacity: 0; /* Optional: start invisible for a smoother fade-in */
+        }
+        100% {
+          transform: translateX(0); /* End at the original position */
+          opacity: 1; /* Fully visible */
+        }
+      }
+
+      .navbar a {
+        font-size: 1.1rem;
+        color: #fff;
+        margin-left: 2rem;
+      }
+
+      .navbar a.active,
+      .navbar a:hover {
+        color: var(--main-color);
+      }
+
+      .menu-button {
+        background: none;
+        border: none;
+        font-size: 2.5em;
+        color: var(--text-color);
+        cursor: pointer;
+        display: none;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #menu-icon {
+        font-size: 2.5em;
+        color: var(--text-color);
+        cursor: pointer;
+        display: none; /* Hidden on desktop */
+      }
+
+      .btn-cv {
+        background: #ff4b81;
+        color: #fff;
+        padding: 0.5rem 1.2rem;
+        border-radius: 5px;
+      }
+
+      /* HOME SECTION */
+      .home {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 0px 10%;
+        gap: 4rem;
+        flex-direction: row; /* Ensure it is explicitly row for desktop */
+        /* justify-content: space-between; Change gap to justify-content */
+      }
+
+      .home .home-content {
+        flex: 1; /* Takes up available space */
+        max-width: 50%;
+      }
+
+      .home .home-img {
+        flex: 1;
+        display: flex;
+        justify-content: center; /* Centers the image box within its half */
+      }
+
+      /* .home-content h2 {
+  animation: homeContentAnim 1s ease-out 0.5s backwards;
+} */
+      .home-content h1 {
+        font-size: 3.5em;
+        line-height: 1.2;
+        text-align: left;
+        /* animation: homeContentAnim 1s ease-out 1s backwards; */
+      }
+      .home-content h3 {
+        font-size: 1.5em;
+      }
+      .home-content p {
+        margin-top: 10px;
+        text-align: left;
+        animation:
+    /* homeContentAnim 1s ease-out 3s backwards, */ textRipple
+          4s ease-in-out 0.5s infinite;
+        background: linear-gradient(
+          90deg,
+          var(--secondary-text-color) 0%,
+          var(--main-color) 25%,
+          var(--secondary-text-color) 50%,
+          var(--main-color) 75%,
+          var(--secondary-text-color) 100%
+        );
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 400;
+        font-size: medium;
+      }
+
+      /* .home-content h3:first-of-type {
+  animation: homeContentAnim 1s ease-out 0s backwards;
+} */
+
+      .home-content h3:last-of-type {
+        display: block;
+        text-align: left;
+        white-space: nowrap;
+        /* animation: homeContentAnim 1s ease-out 2s backwards; */
+      }
+
+      .typing-text {
+        display: inline-block;
+        letter-spacing: 0.05em;
+        color: var(--typing-color);
+        margin-left: 20px;
+      }
+
+      @keyframes homeContentAnim {
+        0% {
+          /* transform: translateY(50px); /* Start 50px below */
+          filter: blur(20px);
+          opacity: 0; /* Optional: start invisible for a smoother fade-in */
+        }
+        100% {
+          transform: translateY(0); /* End at the original position */
+          opacity: 1; /* Fully visible */
+        }
+      }
+
+      @keyframes textRipple {
+        0%,
+        100% {
+          background-position: 200% 0;
+        }
+        50% {
+          background-position: 0 0;
+        }
+      }
+
+      .home-img .img-box {
+        position: relative;
+        width: 32vw;
+        height: 32vw;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* The glowing animated borders */
+      .img-box::before {
+        content: "";
+        position: absolute;
+        width: 102%;
+        height: 102%;
+        border-radius: 50%;
+        border: 2px solid var(--main-color);
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+
+        /* We also hide the border initially so it appears with the image */
+        opacity: 0;
+        animation:
+          rotate 4s linear infinite,
+          fadeIn 0.5s linear 0.5s forwards;
+      }
+
+      .img-box img {
+        width: 90%;
+        height: 90%;
+        object-fit: cover;
+        border-radius: 50%;
+        background: var(--second-bg-color);
+        border: 1px solid var(--main-color);
+
+        /* NEW ANIMATION PROPERTIES */
+        opacity: 0; /* Start hidden */
+        transform: scale(0); /* Start zoomed out at 0 */
+        animation: zoomInEntrance 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+          4s forwards;
+      }
+
+      /* Entrance Zoom Animation */
+      @keyframes zoomInEntrance {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Simple Fade In for the rotating border */
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      /* BUTTONS & SOCIALS */
+      .btn-group {
+        display: flex;
+
+        gap: 1rem;
+
+        margin-top: 2rem;
+      }
+
+      /* Base Button Styling */
+      .btn {
+        padding: 0.8rem 2rem;
+        border-radius: 2rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: 2px solid transparent; /* Added to prevent jumping when border appears */
+        transition: 0.4s ease; /* Smooth transition for the glow and colors */
+        /* animation: homeContentAnim 1s ease-out 5s backwards; */
+      }
+      .btn.primary {
+        background: var(--main-color);
+
+        color: var(--bg-color);
+      }
+
+      .btn.secondary {
+        background: var(--accent-color);
+
+        color: #fff;
+      }
+
+      /* Hover Effect for Primary Button */
+      .btn.primary:hover {
+        background: transparent;
+        color: #fff;
+        border: 2px solid var(--main-color);
+        box-shadow:
+          0 0 15px var(--main-color),
+          0 0 30px var(--main-color);
+      }
+
+      /* Hover Effect for Secondary Button */
+      .btn.secondary:hover {
+        background: transparent;
+        color: #fff;
+        border: 2px solid var(--accent-color);
+        box-shadow:
+          0 0 15px var(--accent-color),
+          0 0 30px var(--accent-color);
+      }
+
+      /* Click Animation (Active State) */
+      .btn:active {
+        transform: scale(0.95); /* Shrinks the button to 95% of its size */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Reduces the glow to look 'pressed' */
+        transition: 0.1s; /* Faster transition for the click for a 'snappy' feel */
+      }
+      .social-media {
+        margin-top: 10px;
+        /* animation: homeContentAnim 1s ease-out 4s backwards; */
+      }
+      .social-media a {
+        font-size: 1.8rem;
+        color: var(--text-color);
+        margin-right: 1.5rem;
+        opacity: 1;
+      }
+      .social-media a:hover {
+        opacity: 1;
+        color: var(--main-color);
+      }
+    </style>
+
+    <link
+      rel="preload"
+      href="styles.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript><link rel="stylesheet" href="styles.min.css" /></noscript>
     <script
       src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"
       defer
